@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -34,9 +35,11 @@ const CTA = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
-            Start Your Free Trial Today
-          </Button>
+          <Link to="/dashboard">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
+              View Live Dashboard Demo
+            </Button>
+          </Link>
           <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
             Schedule a Demo
           </Button>
