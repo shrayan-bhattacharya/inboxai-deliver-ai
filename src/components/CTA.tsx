@@ -26,7 +26,7 @@ const CTA = () => {
           </div>
           <div className="flex items-center justify-center space-x-3">
             <Check className="h-5 w-5 text-green-400" />
-            <span className="text-white">AI-powered optimization</span>
+            <span className="text-white">AI-powered email rectification</span>
           </div>
           <div className="flex items-center justify-center space-x-3">
             <Check className="h-5 w-5 text-green-400" />
@@ -35,14 +35,16 @@ const CTA = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Link to="/dashboard">
+          <Link to="/signup">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
-              View Live Dashboard Demo
+              Get Started Free
             </Button>
           </Link>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
-            Schedule a Demo
-          </Button>
+          <Link to="/dashboard">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
+              View Live Demo
+            </Button>
+          </Link>
         </div>
         
         <p className="text-blue-100">
