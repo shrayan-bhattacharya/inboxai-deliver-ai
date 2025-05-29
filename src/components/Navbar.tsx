@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
-import { Mail, Shield, Settings, BarChart3 } from 'lucide-react';
+import { Mail, Shield, Settings, BarChart3, Zap } from 'lucide-react';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const Navbar = () => {
   const menuItems = [
     { title: "Dashboard", url: "/dashboard", icon: BarChart3 },
     { title: "Email Verification", url: "/email-verification", icon: Mail },
+    { title: "Email Rectification", url: "/email-rectification", icon: Zap },
     { title: "Domain Config", url: "/domain-config", icon: Shield },
   ];
 

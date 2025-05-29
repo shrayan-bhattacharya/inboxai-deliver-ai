@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
@@ -16,6 +17,7 @@ import {
   Users,
   Globe,
   MessageSquare,
+  AlertTriangle,
 } from 'lucide-react';
 
 const Dashboard = () => {
