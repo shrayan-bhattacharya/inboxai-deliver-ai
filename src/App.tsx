@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import DomainConfig from "./pages/DomainConfig";
 import EmailVerification from "./pages/EmailVerification";
+import EmailRectification from "./pages/EmailRectification";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/domain-config" element={<DomainConfig />} />
           <Route path="/email-verification" element={<EmailVerification />} />
+          <Route path="/email-rectification" element={<EmailRectification />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

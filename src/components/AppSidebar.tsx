@@ -14,7 +14,7 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
-import { BarChart3, Mail, Shield, Settings, Home, LogOut } from 'lucide-react';
+import { BarChart3, Mail, Shield, Settings, Home, LogOut, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 
 const menuItems = [
@@ -27,6 +27,11 @@ const menuItems = [
     title: "Email Verification", 
     url: "/email-verification",
     icon: Mail,
+  },
+  {
+    title: "Email Rectification",
+    url: "/email-rectification", 
+    icon: Zap,
   },
   {
     title: "Domain Config",
