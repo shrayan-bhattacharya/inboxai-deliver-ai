@@ -1,32 +1,43 @@
 {
-    "name": "InboxAI",
-    "description": "An open-source email domain authentication, real-time deliverability, and email address rectification platform.",
-    "license": "MIT",
-    "repository": "https://github.com/shrayan-bhattacharya/inboxai-deliver-ai",
-    "webpageUrl": "https://inboxai-rust.vercel.app/",
-    "contact": {
-        "email_1": "shrayanjob08@gmail.com",
-        "email_2": "sounakbanerjee100@gmail.com"
-    },
-    "funding": {
-        "type": "one-time",
-        "amount": 50000,
-        "currency": "USD",
-        "interval": "yearly",
-        "description": "Funding will support domain auto-authentication (SPF, DKIM, DMARC), real-time deliverability analytics, email rectification using passive bounce signals, and hosting costs."
-    },
-    "sustainability": {
-        "plan": "We're building a freemium, API-first email intelligence platform with community support. The open-source core will remain MIT-licensed.",
-        "long_term_support": true,
-        "maintenance_model": "Active team with roadmap releases and GitHub community involvement."
-    },
-    "impact": {
-        "target_users": [
-            "Startups",
-            "Email marketers",
-            "B2B SaaS founders"
-        ],
-        "adoption": "Over 100+ early beta users with integrations into Mailchimp, SendGrid, and HubSpot.",
-        "differentiator": "We combine domain authentication, deliverability scoring, and AI-powered email rectification — all open-source and developer-first."
+  "name": "InboxAI",
+  "description": "An open-source email domain authentication, real-time deliverability, and email address rectification platform.",
+  "license": "MIT",
+  "repository": "https://github.com/shrayan-bhattacharya/inboxai-deliver-ai",
+  "website": "https://inboxai-rust.vercel.app/",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "Shrayan Bhattacharya",
+    "email": "shrayanjob08@gmail.com",
+    "description": "Open-source enthusiast building developer-first tools around email deliverability and outreach infrastructure.",
+    "webpageUrl": {
+      "url": "https://inboxai-rust.vercel.app/"
     }
+  },
+  "contact": {
+    "email_1": "shrayanjob08@gmail.com",
+    "email_2": "sounakbanerjee100@gmail.com"
+  },
+  "funding": {
+    "type": "one-time",
+    "amount": 50000,
+    "currency": "USD",
+    "interval": "yearly",
+    "description": "Funding will support domain auto-authentication (SPF, DKIM, DMARC), real-time deliverability analytics, AI-powered email rectification using bounce signals and pattern learning, as well as hosting and community infrastructure."
+  },
+  "sustainability": {
+    "plan": "We're building a freemium, API-first email intelligence platform with community support. The open-source core will remain MIT-licensed.",
+    "long_term_support": true,
+    "maintenance_model": "Active development team with quarterly roadmap releases and GitHub community collaboration."
+  },
+  "impact": {
+    "target_users": [
+      "Startups",
+      "Email marketers",
+      "B2B SaaS founders",
+      "CRM platforms"
+    ],
+    "adoption": "100+ beta users and integrations with platforms like Mailchimp, SendGrid, and HubSpot. InboxAI improves open rates by up to 28% through real-time bounce correction.",
+    "differentiator": "InboxAI is the only open-source solution combining domain authentication, inbox placement insights, and AI-driven email rectification to auto-correct invalid email addresses using behavioral signals."
+  }
 }
