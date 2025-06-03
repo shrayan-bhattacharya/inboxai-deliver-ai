@@ -1,4 +1,5 @@
 {
+  "version": "v1",
   "name": "InboxAI",
   "description": "An open-source email domain authentication, real-time deliverability, and email address rectification platform.",
   "license": "MIT",
