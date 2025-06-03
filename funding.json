@@ -5,8 +5,8 @@
 "repository": "https://github.com/shrayan-bhattacharya/inboxai-deliver-ai",
 "website": "https://inboxai-rust.vercel.app/",
 "contact": {
-"email 1": "shrayanjob08@gmail.com",
-"email 2": "sounakbanerjee100@gmail.com"
+"email_1": "shrayanjob08@gmail.com",
+"email_2": "sounakbanerjee100@gmail.com"
 },
 "funding": [
 {
@@ -14,21 +14,13 @@
 "amount": 50000,
 "currency": "USD",
 "interval": "yearly",
-"breakdown": {
-"core_development": 20000,
-"email_rectification_algorithm": 10000,
-"AI spam trigger & inbox placement insights": 5000,
-"infrastructure & hosting (Supabase + API Gateway)": 7000,
-"developer documentation & community management": 3000,
-"open-source compliance & testing": 5000
-},
-"description": "Funding will help us build critical components like domain auto-authentication (SPF, DKIM, DMARC), real-time deliverability metrics, and a proprietary open-source module for prospect email rectification that identifies correct email addresses using passive bounce signal aggregation and pattern modeling."
+"description": "Funding will support development of critical components: domain auto-authentication (SPF, DKIM, DMARC), deliverability dashboard, AI-powered spam trigger insights, and our unique email rectification engine which corrects invalid addresses using behavioral bounce signals. Additional funds will cover infrastructure (Supabase + API Gateway), documentation, and compliance testing."
 }
 ],
 "sustainability": {
-"plan": "We're building a freemium, API-first email intelligence platform with community contributions encouraged. Enterprise-grade versions will include advanced analytics, compliance automation, and CRM integrations via SaaS. Funding will ensure our core deliverability + email rectification engine remains free and open-source.",
+"plan": "We're building a freemium, API-first email intelligence platform with a developer-first approach. The open-source core will remain MIT-licensed, while enterprise customers can upgrade for analytics, CRM integrations, and advanced compliance tools.",
 "long_term_support": true,
-"maintenance_model": "Active development by founding team with roadmap published quarterly. Community contributions via GitHub Issues and Pull Requests. Security fixes and core performance improvements under LTS commitments."
+"maintenance_model": "Active core team with quarterly roadmap releases, community contributions via GitHub, automated test suites, and security patches."
 },
 "impact": {
 "target_users": [
@@ -38,7 +30,7 @@
 "CRM platforms",
 "Open-source email campaign tools"
 ],
-"adoption": "Initial traction includes 100+ beta users and integrations with Mailchimp, SendGrid, and HubSpot CRM. Our real-time bounce correction and inbox placement diagnostics engine has already improved open rates by up to 28% in pilot programs.",
-"differentiator": "We are the only open-source solution combining domain authentication, inbox deliverability scoring, and AI-powered email rectification (auto-correction of invalid email addresses using behavioral data & bounce patterns)."
+"adoption": "In early beta, we onboarded 100+ users and tested integrations with Mailchimp, SendGrid, and HubSpot CRM. Our AI-based email correction engine improved deliverability by 28% in test campaigns.",
+"differentiator": "InboxAI is the only open-source solution that combines domain-level authentication, real-time deliverability analytics, and AI-powered email rectification into one unified, developer-friendly platform."
 }
 }
