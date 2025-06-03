@@ -1,3 +1,4 @@
+
 {
   "version": "v1",
   "name": "InboxAI",
@@ -12,7 +13,7 @@
     "email": "shrayanjob08@gmail.com",
     "description": "Open-source enthusiast building developer-first tools around email deliverability and outreach infrastructure.",
     "webpageUrl": {
-      "url": "https://inboxai-rust.vercel.app/"
+      "url": "https://inboxai-rust.vercel.app/funding.json"
     }
   },
   "contact": {
