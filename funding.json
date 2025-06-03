@@ -8,15 +8,13 @@
 "email_1": "shrayanjob08@gmail.com",
 "email_2": "sounakbanerjee100@gmail.com"
 },
-"funding": [
-{
+"funding": {
 "type": "one-time",
 "amount": 50000,
 "currency": "USD",
 "interval": "yearly",
 "description": "Funding will support development of critical components: domain auto-authentication (SPF, DKIM, DMARC), deliverability dashboard, AI-powered spam trigger insights, and our unique email rectification engine which corrects invalid addresses using behavioral bounce signals. Additional funds will cover infrastructure (Supabase + API Gateway), documentation, and compliance testing."
-}
-],
+},
 "sustainability": {
 "plan": "We're building a freemium, API-first email intelligence platform with a developer-first approach. The open-source core will remain MIT-licensed, while enterprise customers can upgrade for analytics, CRM integrations, and advanced compliance tools.",
 "long_term_support": true,
