@@ -3,7 +3,7 @@
 "description": "An open-source email domain authentication, real-time deliverability, and email address rectification platform that ensures accurate delivery, compliance, and prospect targeting.",
 "license": "MIT",
 "repository": "https://github.com/shrayan-bhattacharya/inboxai-deliver-ai",
-"website": "https://inboxai-rust.vercel.app/",
+"webpageUrl": "https://inboxai-rust.vercel.app/",
 "contact": {
 "email_1": "shrayanjob08@gmail.com",
 "email_2": "sounakbanerjee100@gmail.com"
