@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
 import Navbar from '@/components/Navbar';
-import { Upload, Download, Mail, CheckCircle, XCircle, AlertTriangle, Lightbulb, Zap, TrendingUp } from 'lucide-react';
+import { Upload, Download, Mail, CheckCircle, XCircle, AlertTriangle, Lightbulb, Zap, TrendingUp, Sparkles, Brain, Target } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface RectificationResult {
@@ -164,11 +164,11 @@ const EmailRectification = () => {
   const getStatusBadge = (result: RectificationResult) => {
     switch (result.status) {
       case 'corrected':
-        return <Badge className="bg-green-100 text-green-800"><CheckCircle className="h-3 w-3 mr-1" />Corrected</Badge>;
+        return <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 hover-scale"><CheckCircle className="h-3 w-3 mr-1" />Corrected</Badge>;
       case 'suggested':
-        return <Badge className="bg-blue-100 text-blue-800"><Lightbulb className="h-3 w-3 mr-1" />Suggested</Badge>;
+        return <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 hover-scale"><Lightbulb className="h-3 w-3 mr-1" />Suggested</Badge>;
       case 'failed':
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" />Failed</Badge>;
+        return <Badge variant="destructive" className="hover-scale"><XCircle className="h-3 w-3 mr-1" />Failed</Badge>;
       default:
         return <Badge variant="outline">Unknown</Badge>;
     }
@@ -176,90 +176,131 @@ const EmailRectification = () => {
 
   const getIssueTypeBadge = (type: string) => {
     const badges = {
-      typo: <Badge variant="outline" className="text-orange-600">Typo</Badge>,
-      domain: <Badge variant="outline" className="text-purple-600">Domain</Badge>,
-      format: <Badge variant="outline" className="text-red-600">Format</Badge>,
-      provider: <Badge variant="outline" className="text-blue-600">Provider</Badge>
+      typo: <Badge variant="outline" className="text-orange-600 dark:text-orange-400 border-orange-200 dark:border-orange-800 hover-scale">Typo</Badge>,
+      domain: <Badge variant="outline" className="text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-800 hover-scale">Domain</Badge>,
+      format: <Badge variant="outline" className="text-red-600 dark:text-red-400 border-red-200 dark:border-red-800 hover-scale">Format</Badge>,
+      provider: <Badge variant="outline" className="text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover-scale">Provider</Badge>
     };
     return badges[type as keyof typeof badges];
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
       <Navbar />
       <SidebarProvider>
         <div className="flex w-full">
           <AppSidebar />
           <div className="flex-1 p-6">
             <div className="max-w-6xl mx-auto">
-              <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">AI Email Rectification</h1>
-                <p className="text-gray-600">Advanced AI-powered email correction and validation system</p>
+              {/* Header Section */}
+              <div className="mb-8 animate-fade-in-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl blur-3xl"></div>
+                  <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/20 dark:border-slate-700/50 shadow-2xl">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl">
+                        <Brain className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                          AI Email Rectification
+                        </h1>
+                        <p className="text-gray-600 dark:text-gray-400 text-lg">Advanced AI-powered email correction and validation system</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                      <Sparkles className="h-4 w-4 text-yellow-500" />
+                      <span>Powered by advanced machine learning algorithms</span>
+                      <Target className="h-4 w-4 text-green-500 ml-4" />
+                      <span>94.8% accuracy rate</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Stats Overview */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                <Card>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 animate-fade-in-up">
+                <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-medium flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-yellow-500" />
+                      <div className="p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg">
+                        <Zap className="h-4 w-4 text-white" />
+                      </div>
                       Rectified Today
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">1,247</div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">1,247</div>
                     <p className="text-xs text-muted-foreground">+15% from yesterday</p>
                   </CardContent>
                 </Card>
-                <Card>
+                
+                <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-medium flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-green-500" />
+                      <div className="p-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg">
+                        <TrendingUp className="h-4 w-4 text-white" />
+                      </div>
                       Success Rate
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-green-600">94.8%</div>
+                    <div className="text-3xl font-bold text-green-600 dark:text-green-400">94.8%</div>
                     <p className="text-xs text-muted-foreground">Rectification accuracy</p>
                   </CardContent>
                 </Card>
-                <Card>
+                
+                <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-medium">Common Issues</CardTitle>
+                    <CardTitle className="text-sm font-medium flex items-center gap-2">
+                      <div className="p-2 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-lg">
+                        <AlertTriangle className="h-4 w-4 text-white" />
+                      </div>
+                      Common Issues
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-blue-600">Typos</div>
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">Typos</div>
                     <p className="text-xs text-muted-foreground">68% of all corrections</p>
                   </CardContent>
                 </Card>
-                <Card>
+                
+                <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-medium">Time Saved</CardTitle>
+                    <CardTitle className="text-sm font-medium flex items-center gap-2">
+                      <div className="p-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg">
+                        <Target className="h-4 w-4 text-white" />
+                      </div>
+                      Time Saved
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">24.5h</div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">24.5h</div>
                     <p className="text-xs text-muted-foreground">This month</p>
                   </CardContent>
                 </Card>
               </div>
 
-              <Tabs defaultValue="single" className="space-y-6">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="single">Single Rectification</TabsTrigger>
-                  <TabsTrigger value="bulk">Bulk Processing</TabsTrigger>
-                  <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <Tabs defaultValue="single" className="space-y-6 animate-fade-in-up">
+                <TabsList className="grid w-full grid-cols-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-slate-700/50">
+                  <TabsTrigger value="single" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">Single Rectification</TabsTrigger>
+                  <TabsTrigger value="bulk" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">Bulk Processing</TabsTrigger>
+                  <TabsTrigger value="analytics" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">Analytics</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="single">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Single Email Rectification */}
-                    <Card>
+                    <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                       <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                          <Lightbulb className="h-5 w-5 text-yellow-500" />
+                          <div className="p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg">
+                            <Lightbulb className="h-5 w-5 text-white" />
+                          </div>
                           AI Email Rectification
                         </CardTitle>
-                        <CardDescription>Advanced AI correction with confidence scoring</CardDescription>
+                        <CardDescription className="text-gray-600 dark:text-gray-400">Advanced AI correction with confidence scoring</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="flex gap-2">
@@ -267,19 +308,19 @@ const EmailRectification = () => {
                             placeholder="Try: user@gmial.com, test@hotmial.com"
                             value={singleEmail}
                             onChange={(e) => setSingleEmail(e.target.value)}
-                            className="flex-1"
+                            className="flex-1 bg-white/50 dark:bg-slate-800/50 border-white/20 dark:border-slate-700/50"
                           />
-                          <Button onClick={handleSingleRectification} disabled={isProcessing || !singleEmail}>
+                          <Button onClick={handleSingleRectification} disabled={isProcessing || !singleEmail} className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
                             <Zap className="h-4 w-4 mr-2" />
                             {isProcessing ? 'Processing...' : 'Rectify'}
                           </Button>
                         </div>
                         
                         {isProcessing && (
-                          <div className="space-y-2">
+                          <div className="space-y-2 animate-fade-in">
                             <div className="flex justify-between text-sm">
-                              <span>AI analyzing email patterns...</span>
-                              <span>Processing</span>
+                              <span className="text-gray-600 dark:text-gray-400">AI analyzing email patterns...</span>
+                              <span className="text-blue-600 dark:text-blue-400">Processing</span>
                             </div>
                             <Progress value={undefined} className="w-full" />
                           </div>
@@ -288,10 +329,15 @@ const EmailRectification = () => {
                     </Card>
 
                     {/* Quick Examples */}
-                    <Card>
+                    <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                       <CardHeader>
-                        <CardTitle>Try These Examples</CardTitle>
-                        <CardDescription>Click to test common email issues</CardDescription>
+                        <CardTitle className="flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg">
+                            <Target className="h-5 w-5 text-white" />
+                          </div>
+                          Try These Examples
+                        </CardTitle>
+                        <CardDescription className="text-gray-600 dark:text-gray-400">Click to test common email issues</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-3">
                         {[
@@ -304,7 +350,7 @@ const EmailRectification = () => {
                           <Button
                             key={example}
                             variant="outline"
-                            className="w-full justify-start text-left"
+                            className="w-full justify-start text-left hover-scale bg-white/50 dark:bg-slate-800/50 border-white/20 dark:border-slate-700/50"
                             onClick={() => setSingleEmail(example)}
                           >
                             {example}
@@ -316,39 +362,45 @@ const EmailRectification = () => {
                 </TabsContent>
 
                 <TabsContent value="bulk">
-                  <Card>
+                  <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                     <CardHeader>
-                      <CardTitle>Bulk Email Rectification</CardTitle>
-                      <CardDescription>Process multiple emails with AI-powered corrections</CardDescription>
+                      <CardTitle className="flex items-center gap-2">
+                        <div className="p-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg">
+                          <Upload className="h-5 w-5 text-white" />
+                        </div>
+                        Bulk Email Rectification
+                      </CardTitle>
+                      <CardDescription className="text-gray-600 dark:text-gray-400">Process multiple emails with AI-powered corrections</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                        <Upload className="h-8 w-8 mx-auto text-gray-400 mb-2" />
-                        <p className="text-sm text-gray-600 mb-2">Upload CSV file with emails</p>
-                        <Button variant="outline" size="sm">
+                      <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center bg-white/30 dark:bg-slate-800/30">
+                        <Upload className="h-8 w-8 mx-auto text-gray-400 dark:text-gray-500 mb-2" />
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Upload CSV file with emails</p>
+                        <Button variant="outline" size="sm" className="hover-scale bg-white/50 dark:bg-slate-800/50">
                           Choose File
                         </Button>
                       </div>
                       
-                      <div className="text-center text-sm text-gray-500">or</div>
+                      <div className="text-center text-sm text-gray-500 dark:text-gray-400">or</div>
                       
                       <Textarea
                         placeholder="Paste emails here (one per line):&#10;user@gmial.com&#10;test@hotmial.com&#10;admin@yaho.com&#10;contact@outlok.co"
                         value={bulkEmails}
                         onChange={(e) => setBulkEmails(e.target.value)}
                         rows={6}
+                        className="bg-white/50 dark:bg-slate-800/50 border-white/20 dark:border-slate-700/50"
                       />
                       
-                      <Button className="w-full" onClick={handleBulkRectification}>
+                      <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700" onClick={handleBulkRectification}>
                         <Zap className="h-4 w-4 mr-2" />
                         Bulk Rectify Emails
                       </Button>
                       
                       {processingProgress > 0 && processingProgress < 100 && (
-                        <div className="space-y-2">
+                        <div className="space-y-2 animate-fade-in">
                           <div className="flex justify-between text-sm">
-                            <span>AI processing emails...</span>
-                            <span>{processingProgress}%</span>
+                            <span className="text-gray-600 dark:text-gray-400">AI processing emails...</span>
+                            <span className="text-blue-600 dark:text-blue-400">{processingProgress}%</span>
                           </div>
                           <Progress value={processingProgress} />
                         </div>
@@ -359,43 +411,53 @@ const EmailRectification = () => {
 
                 <TabsContent value="analytics">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card>
+                    <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                       <CardHeader>
-                        <CardTitle>Issue Distribution</CardTitle>
+                        <CardTitle className="flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-lg">
+                            <TrendingUp className="h-5 w-5 text-white" />
+                          </div>
+                          Issue Distribution
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
                           <div className="flex justify-between items-center">
-                            <span className="text-sm">Typos (68%)</span>
-                            <div className="w-32 bg-gray-200 rounded-full h-2">
-                              <div className="bg-orange-500 h-2 rounded-full" style={{width: '68%'}}></div>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">Typos (68%)</span>
+                            <div className="w-32 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div className="bg-gradient-to-r from-orange-400 to-red-500 h-2 rounded-full" style={{width: '68%'}}></div>
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-sm">Domain Issues (20%)</span>
-                            <div className="w-32 bg-gray-200 rounded-full h-2">
-                              <div className="bg-purple-500 h-2 rounded-full" style={{width: '20%'}}></div>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">Domain Issues (20%)</span>
+                            <div className="w-32 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div className="bg-gradient-to-r from-purple-400 to-indigo-500 h-2 rounded-full" style={{width: '20%'}}></div>
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-sm">Format Errors (8%)</span>
-                            <div className="w-32 bg-gray-200 rounded-full h-2">
-                              <div className="bg-red-500 h-2 rounded-full" style={{width: '8%'}}></div>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">Format Errors (8%)</span>
+                            <div className="w-32 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div className="bg-gradient-to-r from-red-400 to-pink-500 h-2 rounded-full" style={{width: '8%'}}></div>
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-sm">Provider Issues (4%)</span>
-                            <div className="w-32 bg-gray-200 rounded-full h-2">
-                              <div className="bg-blue-500 h-2 rounded-full" style={{width: '4%'}}></div>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">Provider Issues (4%)</span>
+                            <div className="w-32 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                              <div className="bg-gradient-to-r from-blue-400 to-cyan-500 h-2 rounded-full" style={{width: '4%'}}></div>
                             </div>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
 
-                    <Card>
+                    <Card className="hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
                       <CardHeader>
-                        <CardTitle>Top Corrections</CardTitle>
+                        <CardTitle className="flex items-center gap-2">
+                          <div className="p-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-lg">
+                            <Target className="h-5 w-5 text-white" />
+                          </div>
+                          Top Corrections
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
@@ -406,8 +468,8 @@ const EmailRectification = () => {
                             { from: 'outlok.com', to: 'outlook.com', count: 312 }
                           ].map((correction) => (
                             <div key={correction.from} className="flex justify-between text-sm">
-                              <span>{correction.from} → {correction.to}</span>
-                              <span className="font-medium">{correction.count}</span>
+                              <span className="text-gray-700 dark:text-gray-300">{correction.from} → {correction.to}</span>
+                              <span className="font-medium text-blue-600 dark:text-blue-400">{correction.count}</span>
                             </div>
                           ))}
                         </div>
@@ -418,14 +480,19 @@ const EmailRectification = () => {
               </Tabs>
 
               {/* Rectification Results */}
-              <Card className="mt-6">
+              <Card className="mt-6 hover-lift glass border-white/20 dark:border-slate-700/50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl animate-fade-in-up">
                 <CardHeader>
                   <div className="flex justify-between items-center">
                     <div>
-                      <CardTitle>Recent Rectifications</CardTitle>
-                      <CardDescription>AI-powered email corrections with confidence scores</CardDescription>
+                      <CardTitle className="flex items-center gap-2">
+                        <div className="p-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg">
+                          <Mail className="h-5 w-5 text-white" />
+                        </div>
+                        Recent Rectifications
+                      </CardTitle>
+                      <CardDescription className="text-gray-600 dark:text-gray-400">AI-powered email corrections with confidence scores</CardDescription>
                     </div>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" className="hover-scale bg-white/50 dark:bg-slate-800/50 border-white/20 dark:border-slate-700/50">
                       <Download className="h-4 w-4 mr-2" />
                       Export Results
                     </Button>
@@ -434,17 +501,17 @@ const EmailRectification = () => {
                 <CardContent>
                   <div className="space-y-3">
                     {rectificationResults.map((result) => (
-                      <div key={result.id} className="flex items-center justify-between p-4 border rounded-lg">
+                      <div key={result.id} className="flex items-center justify-between p-4 border border-white/20 dark:border-slate-700/50 rounded-lg bg-white/30 dark:bg-slate-800/30 hover-lift">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="font-medium text-red-600 line-through">{result.originalEmail}</span>
-                            <span className="text-gray-400">→</span>
-                            <span className="font-medium text-green-600">{result.rectifiedEmail}</span>
+                            <span className="font-medium text-red-600 dark:text-red-400 line-through">{result.originalEmail}</span>
+                            <span className="text-gray-400 dark:text-gray-500">→</span>
+                            <span className="font-medium text-green-600 dark:text-green-400">{result.rectifiedEmail}</span>
                           </div>
-                          <div className="text-sm text-gray-600 space-y-1">
+                          <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             <div className="flex items-center gap-2">
                               <span>{result.description}</span>
-                              <span className="text-blue-600">• Confidence: {result.confidence}%</span>
+                              <span className="text-blue-600 dark:text-blue-400">• Confidence: {result.confidence}%</span>
                             </div>
                           </div>
                         </div>
